@@ -1,36 +1,134 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Hackathon Boilerplate
 
-## Getting Started
+A production-ready Next.js 14 + TypeScript + TailwindCSS frontend boilerplate optimized for hackathons.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Core Stack
+- **Next.js 14** with App Router
+- **TypeScript** with strict mode
+- **TailwindCSS** with custom theme system
+- **shadcn/ui** components
+- **Framer Motion** animations
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Authentication System
+- Simple React context-based auth
+- Login/Signup pages with validation
+- Protected routes with AuthGuard
+- Easy to replace with Supabase/Firebase later
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Layout System
+- **AuthLayout** - Centered forms for login/signup
+- **AppLayout** - Dashboard with sidebar, header, footer
+- Responsive design with mobile-friendly navigation
+- Dark/light mode toggle
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Pages & Features
+- **Dashboard** - Stats cards, charts, data tables
+- **Profile** - Editable user profile with avatar
+- **Settings** - Comprehensive settings with tabs
+- **Login/Signup** - Beautiful auth forms
 
-## Learn More
+### UI Components
+- Pre-built reusable components
+- Animated counters and transitions
+- Loading states and spinners
+- Toast notifications
+- Responsive data tables
+- Interactive charts (Recharts)
 
-To learn more about Next.js, take a look at the following resources:
+### Developer Experience
+- Clean folder structure
+- TypeScript interfaces
+- Modular components
+- Easy customization
+- Mobile-first responsive design
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🏃‍♂️ Quick Start
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Clone and Install**
+   \`\`\`bash
+   git clone <your-repo>
+   cd hackathon-boilerplate
+   npm install
+   \`\`\`
 
-## Deploy on Vercel
+2. **Run Development Server**
+   \`\`\`bash
+   npm run dev
+   \`\`\`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. **Open Browser**
+   Navigate to `http://localhost:3000`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📁 Project Structure
+
+\`\`\`
+├── app/                    # Next.js App Router pages
+│   ├── dashboard/         # Dashboard page
+│   ├── login/            # Login page
+│   ├── profile/          # Profile page
+│   ├── settings/         # Settings page
+│   └── signup/           # Signup page
+├── components/
+│   ├── dashboard/        # Dashboard-specific components
+│   ├── layouts/          # Layout components
+│   └── ui/              # Reusable UI components
+├── lib/                  # Utilities and contexts
+│   ├── auth-context.tsx  # Authentication context
+│   └── theme-provider.tsx # Theme provider
+└── hooks/               # Custom React hooks
+\`\`\`
+
+## 🎨 Customization
+
+### Theme Colors
+Edit `app/globals.css` to customize the color palette:
+- Primary: Orange (#646222)
+- Accent: Blue (#6118)
+- Supports light/dark modes
+
+### Authentication
+Replace the mock auth in `lib/auth-context.tsx` with:
+- Supabase Auth
+- Firebase Auth
+- NextAuth.js
+- Custom API
+
+### Database Integration
+Ready for integration with:
+- Supabase
+- PlanetScale
+- Neon
+- Any PostgreSQL/MySQL database
+
+## 📊 Dashboard Features
+
+- **Stats Cards** - Revenue, users, conversion rates
+- **Charts** - Revenue trends, user activity
+- **Data Tables** - Project management with actions
+- **Recent Activity** - User action feed
+- All with dummy data ready to be replaced
+
+## 🔧 Built for Hackathons
+
+- **Fast Setup** - Get running in minutes
+- **Easy Customization** - Change colors, branding quickly
+- **Scalable Architecture** - Add features without refactoring
+- **Production Ready** - Deploy to Vercel instantly
+- **Mobile Responsive** - Works on all devices
+
+## 🚀 Deployment
+
+Deploy to Vercel with one click:
+\`\`\`bash
+npm run build
+\`\`\`
+
+## 📝 License
+
+MIT License - feel free to use for any hackathon or project!
+
+---
+
+**Ready to build something amazing? Start coding! 🎯**

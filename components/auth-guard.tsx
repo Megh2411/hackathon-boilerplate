@@ -1,21 +1,28 @@
 "use client"
 import { useAuth } from "@/lib/auth-context"
+import type React from "react"
+
 import { useRouter } from "next/navigation"
 import { useEffect } from "react"
 
-export default function HomePage() {
+interface AuthGuardProps {
+  children: React.ReactNode
+  requireAuth?: boolean
+}
+
+export function AuthGuard({ children, requireAuth = true }: AuthGuardProps) {
   const { user, isLoading } = useAuth()
   const router = useRouter()
 
   useEffect(() => {
     if (!isLoading) {
-      if (user) {
-        router.push("/dashboard")
-      } else {
+      if (requireAuth && !user) {
         router.push("/login")
+      } else if (!requireAuth && user) {
+        router.push("/dashboard")
       }
     }
-  }, [user, isLoading, router])
+  }, [user, isLoading, requireAuth, router])
 
   if (isLoading) {
     return (
@@ -25,5 +32,13 @@ export default function HomePage() {
     )
   }
 
-  return null
+  if (requireAuth && !user) {
+    return null
+  }
+
+  if (!requireAuth && user) {
+    return null
+  }
+
+  return <>{children}</>
 }
